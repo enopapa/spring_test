@@ -1,11 +1,11 @@
-package hello.core.order;
+package hello.core.order.Service.impl;
 
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixDiscountPolicy;
-import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.Repository.MemberRepository;
 import hello.core.member.Repository.impl.MemoryMemberRepository;
+import hello.core.order.Order;
+import hello.core.order.Service.OrderService;
 
 public class OrderServiceImpl implements OrderService {
 
