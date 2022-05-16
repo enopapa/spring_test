@@ -9,6 +9,11 @@ public class StatefulService {
         this.price = price; // 여기가 문제!
     }
 
+    public int orderEdit(String name, int price)    {
+        System.out.println("name = " + name + " :: price = " + price);
+        return price;
+    }
+
     public int getPrice()   {
         return price;
     }

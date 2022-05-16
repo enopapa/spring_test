@@ -16,20 +16,24 @@ public class AppConfig {
     @Bean
     public MemberService memberService()    {
 //        return new MemberServiceImpl(new MemoryMemberRepository());
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
-    public MemoryMemberRepository memberRepository() {
-        return new MemoryMemberRepository();
-    }
-
-
-    @Bean
     public OrderService orderService()  {
+        // No.1
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(
                 memberRepository(),
                 discountPolicy());
+    }
+
+    @Bean
+    public MemoryMemberRepository memberRepository() {
+        // No.2? No.3?
+        System.out.println("call AppConfig.memberRepository");
+        return new MemoryMemberRepository();
     }
 
     @Bean
