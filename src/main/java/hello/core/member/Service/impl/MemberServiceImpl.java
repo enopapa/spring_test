@@ -4,12 +4,16 @@ import hello.core.member.Member;
 import hello.core.member.Repository.MemberRepository;
 import hello.core.member.Repository.impl.MemoryMemberRepository;
 import hello.core.member.Service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MemberServiceImpl implements MemberService {
 
 //    private final MemberRepository memberRepository = new MemoryMemberRepository();
     private final MemoryMemberRepository memberRepository;
 
+    @Autowired  // ac.getBean(MemberRepository.class)
     public MemberServiceImpl(MemoryMemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
